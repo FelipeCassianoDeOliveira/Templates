@@ -35,7 +35,7 @@
                     </div><!-- end card title -->
 
                    <!--form sign up -->
-                   <form class="form-sign-up" action="" method="post">
+                   <form class="form-sign-up" action="" method="post" name="formSignUp" id="formSignUp">
 
                        <!--  form-row first name and last name -->
                        <div class="form-row">
@@ -115,15 +115,16 @@
                                       <i class="fas fa-lock"></i>
                                   </span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Confirma senha" name="confirmPass" id="confrmPass" required>
+                                <input type="password" class="form-control" placeholder="Confirma senha" name="confirmPass" id="confirmPass" required>
                               </div>
                         </div><!-- end input confirm password -->
 
                        </div><!-- end form-row userName and email -->
+
                        <!-- button submit -->
                        <div class="form-row">
                             <div class="col">
-                                <button class="btn btn-success btn-block btn-lg" type="submit">cadastrar</button>
+                                <button class="btn btn-success btn-block btn-lg" type="submit" onclick="confirmPassword()">cadastrar</button>
                             </div>
                        </div>
 
@@ -149,8 +150,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <!-- script -->
-        <script>
-    
+        <script type="text/javascript">
+                function confirmPassword(){
+                    var checkPass = document.getElementById("userPass").value;
+                    var confirPass = document.getElementById("confirmPass").value;
+
+                    if( checkPass != confirPass){
+                        alert("Senhas diferentes");
+                        document.getElementById("InfoPassConfirm").innerHTML = "diferente!";
+                        return false;
+                    }
+
+                }
+
+                
         </script>
     
     </body>
