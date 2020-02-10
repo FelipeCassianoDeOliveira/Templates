@@ -25,3 +25,10 @@
             /** end are form login  */
             footer{ margin-top: 0px;}
 
+
+            @media screen and (max-width:1360px){
+                body footer{
+                    margin-top: 50px;
+                }
+                
+            }
