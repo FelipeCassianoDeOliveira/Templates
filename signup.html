@@ -65,7 +65,7 @@
                            </div><!-- end input last name -->
                        </div> <!-- end  form-row first name and last name-->
 
-                       <!-- form-row userName and email -->
+                       <!-- form-row userLogin and email -->
                        <div class="form-row">
                             <!--input userName -->    
                             <div class="col">
@@ -75,9 +75,9 @@
                                          <i class="fas fa-user"></i>
                                      </span>
                                    </div>
-                                   <input type="text" class="form-control" placeholder="Nome de usuário" name="userName" id="userName" required>
+                                   <input type="text" class="form-control" placeholder="Nome de usuário" name="userLogin" id="userLogin" required>
                                  </div>
-                           </div><!-- end input userName -->
+                           </div><!-- end input userLogin -->
    
                             <!--input email -->    
                             <div class="col">
@@ -115,7 +115,7 @@
                                       <i class="fas fa-lock"></i>
                                   </span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Confirma senha" name="confirmPass" id="confirmPass" required>
+                                <input type="password" class="form-control" placeholder="Confirma senha" name="confirmPass" id="confirmPass" required title="Confirmar senha" oninput="confirmPassword(this)">
                               </div>
                         </div><!-- end input confirm password -->
 
@@ -151,17 +151,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <!-- script -->
         <script type="text/javascript">
-                function confirmPassword(){
-                    var checkPass = document.getElementById("userPass").value;
-                    var confirPass = document.getElementById("confirmPass").value;
-
-                    if( checkPass != confirPass){
-                        alert("Senhas diferentes");
-                        document.getElementById("InfoPassConfirm").innerHTML = "diferente!";
-                        return false;
-                    }
-
-                }
+				//for confirm password 
+                function confirmPassword(input){
+                 	if(input.value != document.getElementById('userPass').value){
+					   input.setCustomValidity("Senhas diferente");
+					}else{
+						input.setCustomValidity('');
+					}
+                }//end for confirm password
 
                 
         </script>
